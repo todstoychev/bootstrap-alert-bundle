@@ -2,26 +2,31 @@
     {% for message in messages %}
         {% if type == 'error' %} {% set type = 'danger' %} {% endif %}
         <div class="alert alert-{{ type }} alert-dismissable" role="alert">
-            <button type="button"
-                    class="close"
-                    data-dismiss="alert"
-                    aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            {% if type == 'danger' %}
-                <i class="glyphicon glyphicon-remove-sign alert-icon"></i>
+            {% if todstoychev_bootstrap_alert.use_close_button %}
+                <button type="button"
+                        class="close"
+                        data-dismiss="alert"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             {% endif %}
 
-            {% if type == 'warning' %}
-                <i class="glyphicon glyphicon-exclamation-sign alert-icon"></i>
-            {% endif %}
+            {% if todstoychev_bootstrap_alert.use_icons %}
+                {% if type == 'danger' %}
+                    <i class="{{ todstoychev_bootstrap_alert.icons.error }} alert-icon"></i>
+                {% endif %}
 
-            {% if type == 'info' %}
-                <i class="glyphicon glyphicon-info-sign alert-icon"></i>
-            {% endif %}
+                {% if type == 'warning' %}
+                    <i class="{{ todstoychev_bootstrap_alert.icons.warning }} alert-icon"></i>
+                {% endif %}
 
-            {% if type == 'success' %}
-                <i class="glyphicon glyphicon-ok-sign alert-icon"></i>
+                {% if type == 'info' %}
+                    <i class="{{ todstoychev_bootstrap_alert.icons.info }} alert-icon"></i>
+                {% endif %}
+
+                {% if type == 'success' %}
+                    <i class="{{ todstoychev_bootstrap_alert.icons.success }} alert-icon"></i>
+                {% endif %}
             {% endif %}
             <span class="alert-message">
                     {{ message|raw }}

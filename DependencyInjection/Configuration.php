@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('todstoychev_bootstrap_alert');
+        $rootNode = $treeBuilder->root('twig.globals.todstoychev_bootstrap_alert');
 
         $rootNode->children()
             ->booleanNode('use_close_button')

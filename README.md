@@ -18,19 +18,23 @@ php bin/console asset:install
 ```
 Symfony will install the assets for you
 
+It will be also necessary to include to your stylesheet list the file named style.css, which is included in the bundle's css directory.
+
 # Configuration
 
-Those are the default values for your application config.yml:
+Add to your application config.yml:
 
 ```yaml
-todstoychev_bootstrap_alert:
-    use_close_button: true # Allows you to use close button in alert boxes
-    use_icons: true # Show icons in alert boxes
-    icons:
-      error: 'glyphicon glyphicon-close-sign'
-      warning: 'glyphicon glyphicon-exclamation-sign'
-      info: 'glyphicon glyhicon-info-sign'
-      success: 'glyphicon glyphicon-ok-sign'
+twig:
+  globals:
+    todstoychev_bootstrap_alert:
+      use_close_button: true # Allows you to use close button in alert boxes
+      use_icons: true # Show icons in alert boxes
+      icons:
+        error: 'glyphicon glyphicon-close-sign'
+        warning: 'glyphicon glyphicon-exclamation-sign'
+        info: 'glyphicon glyhicon-info-sign'
+        success: 'glyphicon glyphicon-ok-sign'
 ```
 
 Feel free to use any other icon sets
