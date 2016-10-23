@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
                 ->defaultTrue()
                 ->end()
             ->arrayNode('icons')
-                ->addDefaultsIfNotSett()
+                ->addDefaultsIfNotSet()
                 ->children()
                     ->scalarNode('error')
                         ->defaultValue('glyphicon glyphicon-remove-sign')
