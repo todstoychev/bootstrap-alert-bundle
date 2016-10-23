@@ -9,7 +9,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="row">
-                <div class="alert-icon col-xs-1">
+                <span class="alert-icon col-xs-1">
                     {% if type == 'danger' %}
                         <i class="glyphicon glyphicon-remove-sign"></i>
                     {% endif %}
@@ -25,7 +25,7 @@
                     {% if type == 'success' %}
                         <i class="glyphicon glyphicon-ok-sign"></i>
                     {% endif %}
-                </div>
+                </span>
                 <div class="alert-message col-xs-11">
                     {{ message|raw }}
                 </div>
