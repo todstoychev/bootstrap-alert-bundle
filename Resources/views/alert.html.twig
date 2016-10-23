@@ -8,28 +8,24 @@
                     aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <div class="row">
-                <span class="alert-icon col-xs-1">
-                    {% if type == 'danger' %}
-                        <i class="glyphicon glyphicon-remove-sign"></i>
-                    {% endif %}
+            {% if type == 'danger' %}
+                <i class="glyphicon glyphicon-remove-sign alert-icon"></i>
+            {% endif %}
 
-                    {% if type == 'warning' %}
-                        <i class="glyphicon glyphicon-exclamation-sign"></i>
-                    {% endif %}
+            {% if type == 'warning' %}
+                <i class="glyphicon glyphicon-exclamation-sign alert-icon"></i>
+            {% endif %}
 
-                    {% if type == 'info' %}
-                        <i class="glyphicon glyphicon-info-sign"></i>
-                    {% endif %}
+            {% if type == 'info' %}
+                <i class="glyphicon glyphicon-info-sign alert-icon"></i>
+            {% endif %}
 
-                    {% if type == 'success' %}
-                        <i class="glyphicon glyphicon-ok-sign"></i>
-                    {% endif %}
-                </span>
-                <div class="alert-message col-xs-11">
+            {% if type == 'success' %}
+                <i class="glyphicon glyphicon-ok-sign alert-icon"></i>
+            {% endif %}
+            <span class="alert-message">
                     {{ message|raw }}
-                </div>
-            </div>
+            </span>
         </div>
     {% endfor %}
 {% endfor %}
