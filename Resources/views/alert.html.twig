@@ -1,0 +1,31 @@
+{% for type, messages in app.session.flashBag.all %}
+    {% for message in messages %}
+        {% if type == 'error' %} {% set type = 'danger' %} {% endif %}
+        <div class="alert alert-{{ type }} alert-dismissable" role="alert">
+            <button type="button"
+                    class="close"
+                    data-dismiss="alert"
+                    aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="alert-icon">
+                {% if type == 'danger' %}
+                    <i class="glyphicon glyphicon-remove-sign"></i>
+                {% endif %}
+
+                {% if type == 'warning' %}
+                    <i class="glyphicon glyphicon-exclamation-sign"></i>
+                {% endif %}
+
+                {% if type == 'info' %}
+                    <i class="glyphicon glyphicon-info-sign"></i>
+                {% endif %}
+
+                {% if type == 'success' %}
+                    <i class="glyphicon glyphicon-ok-sign"></i>
+                {% endif %}
+            </div>
+            {{ message|raw }}
+        </div>
+    {% endfor %}
+{% endfor %}

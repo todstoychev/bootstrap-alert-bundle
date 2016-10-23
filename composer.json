@@ -1,0 +1,18 @@
+{
+  "name": "todstoychev/bootstrap-alert-bundle",
+  "description": "Symfony bundle used to create Twitter Bootstrap 3 alert boxes.",
+  "type": "bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Todor Todorov",
+      "email": "todstoychev@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Todstoychev\\BootstrapAlertBundle": ""
+    }
+  }
+}
